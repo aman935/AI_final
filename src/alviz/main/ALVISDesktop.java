@@ -52,7 +52,6 @@ public class ALVISDesktop extends javax.swing.JFrame {
         // based on current state enable/disable components
         switch (app.execState) {
             case APPLICATION_STARTED: {
-
                 fileMenu.setEnabled(true);
                 saveGraphButton.setEnabled(false); // <TODO>
                 algoMenu.setEnabled(true);
@@ -168,13 +167,14 @@ public class ALVISDesktop extends javax.swing.JFrame {
                     densityLabel.setEnabled(false);
                     densityComboBox.setEnabled(false);
 
-                    startNodeButton.setEnabled(false);
+                    startNodeButton.setEnabled(true);
+                    runButton2.setEnabled(true);
                 //}
             }
             break;
             case START_NODE_APPLIED: {
                 startNodeButton.setEnabled(false);
-                goalNodesButton.setEnabled(false);
+                goalNodesButton.setEnabled(true);
             }
             break;
             case GOAL_NODE_APPLIED: {
