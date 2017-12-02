@@ -41,9 +41,9 @@ public class ALVISDesktop extends javax.swing.JFrame {
         graphCanvas1.setApp(app);
 
         refreshRateValueLabel.setText(app.refreshRate.setDelay(refreshRateSlider.getValue()));
-        app.branchingFactor = Integer.valueOf((String)branchingFactorComboBox.getItemAt(branchingFactorComboBox.getSelectedIndex()));
-        app.density = Integer.valueOf((String)densityComboBox.getItemAt(densityComboBox.getSelectedIndex()));
-        app.densityMax = Integer.valueOf((String)densityComboBox.getItemAt(densityComboBox.getItemCount()-1));
+        // app.branchingFactor = Integer.valueOf((String)branchingFactorComboBox.getItemAt(branchingFactorComboBox.getSelectedIndex()));
+        //app.density = Integer.valueOf((String)densityComboBox.getItemAt(densityComboBox.getSelectedIndex()));
+        //app.densityMax = Integer.valueOf((String)densityComboBox.getItemAt(densityComboBox.getItemCount()-1));
 
         enableComponents();
     }
@@ -56,9 +56,9 @@ public class ALVISDesktop extends javax.swing.JFrame {
                 fileMenu.setEnabled(true);
                 saveGraphButton.setEnabled(false); // <TODO>
                 algoMenu.setEnabled(true);
-                algoBFSButton.setEnabled(true);        // enabled after integration
+                algoBFSButton.setEnabled(false);        // enabled after integration
                 algoGeneticButton.setEnabled(true);        // enabled after integration
-                algoDFSButton.setEnabled(true);       // enabled after integration
+                algoDFSButton.setEnabled(false);       // enabled after integration
                 sizeLabel.setEnabled(false);
                 sizeSpinner.setEnabled(false);
                 branchingFactorLabel.setEnabled(false);
@@ -73,14 +73,14 @@ public class ALVISDesktop extends javax.swing.JFrame {
 
                 stepThroughButton.setEnabled(false);
                 runButton2.setEnabled(false);
-                stopButton2.setEnabled(true);
+                stopButton2.setEnabled(false);
                 pipeButton.setEnabled(false);
             }
             break;
             case ALGO_SELECTED: {
                 algoMenu.setEnabled(false);
                 if (app.isPipeMode()) {
-                    stepThroughButton.setEnabled(true);
+                    stepThroughButton.setEnabled(false);
                     runButton2.setEnabled(true);
                 }
                 else {
@@ -117,32 +117,32 @@ public class ALVISDesktop extends javax.swing.JFrame {
                         sizeLabel.setEnabled(true);
                         sizeSpinner.setEnabled(true);
 
-                        branchingFactorLabel.setEnabled(true);
-                        branchingFactorComboBox.setEnabled(true);
+                        branchingFactorLabel.setEnabled(false);
+                        branchingFactorComboBox.setEnabled(false);
                         
-                        densityLabel.setEnabled(true);
-                        densityComboBox.setEnabled(true);
+                        densityLabel.setEnabled(false);
+                        densityComboBox.setEnabled(false);
 
                         //algoMinMaxButton.setEnabled(false);
                         //algoAlphaBetaButton.setEnabled(false);
                         //algoSSS_StarButton.setEnabled(false);
 
-                        graphGameTree_1Button.setEnabled(true);
-                        graphGameTree_2Button.setEnabled(true);
-                        graphGameTree_3Button.setEnabled(true);
+                        graphGameTree_1Button.setEnabled(false);
+                        graphGameTree_2Button.setEnabled(false);
+                        graphGameTree_3Button.setEnabled(false);
 
-                        graphSparseButton.setEnabled(true);
+                        graphSparseButton.setEnabled(false);
                         graphDenseButton.setEnabled(true);
-                        graphTreeButton.setEnabled(true);
+                        graphTreeButton.setEnabled(false);
 
                         graphGrid_1Button.setEnabled(true);
                         graphGrid_2Button.setEnabled(true);
                         graphGrid_3Button.setEnabled(true);
                         graphGrid_4Button.setEnabled(true);
-                        graphGrid_1MSTButton.setEnabled(true);
-                        graphGrid_2MSTButton.setEnabled(true);
-                        graphGrid_3MSTButton.setEnabled(true);
-                        graphGrid_4MSTButton.setEnabled(true);
+                        graphGrid_1MSTButton.setEnabled(false);
+                        graphGrid_2MSTButton.setEnabled(false);
+                        graphGrid_3MSTButton.setEnabled(false);
+                        graphGrid_4MSTButton.setEnabled(false);
                     //}
                 }
             }
@@ -168,23 +168,23 @@ public class ALVISDesktop extends javax.swing.JFrame {
                     densityLabel.setEnabled(false);
                     densityComboBox.setEnabled(false);
 
-                    startNodeButton.setEnabled(true);
+                    startNodeButton.setEnabled(false);
                 //}
             }
             break;
             case START_NODE_APPLIED: {
                 startNodeButton.setEnabled(false);
-                goalNodesButton.setEnabled(true);
+                goalNodesButton.setEnabled(false);
             }
             break;
             case GOAL_NODE_APPLIED: {
                 goalNodesButton.setEnabled(false);
-                stepThroughButton.setEnabled(true);
+                stepThroughButton.setEnabled(false);
                 runButton2.setEnabled(true);
             }
             break;
             case STEPPING_THROUGH: {
-                stepThroughButton.setEnabled(true);
+                stepThroughButton.setEnabled(false);
             }
             break;
             case RUNNING: {
@@ -194,10 +194,10 @@ public class ALVISDesktop extends javax.swing.JFrame {
             break;
             case STOPPED: {
                 if (app.isSearchSpaceLoaded()) {
-                    startNodeButton.setEnabled(true);
+                    startNodeButton.setEnabled(false);
                 }
                 else {
-                    algoMenu.setEnabled(true);
+                    algoMenu.setEnabled(false);
                 }
 
                 stepThroughButton.setEnabled(false);
