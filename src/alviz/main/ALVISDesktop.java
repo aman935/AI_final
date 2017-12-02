@@ -383,7 +383,7 @@ public class ALVISDesktop extends javax.swing.JFrame {
 
         jToolBar1 = new javax.swing.JToolBar();
         sizeLabel = new javax.swing.JLabel();
-        sizeSpinner = new javax.swing.JSpinner(new SpinnerNumberModel(1000, 2, 3000, 50));
+        sizeSpinner = new javax.swing.JSpinner(new SpinnerNumberModel(10, 2, 3000, 50));
         branchingFactorLabel = new javax.swing.JLabel();
         branchingFactorComboBox = new javax.swing.JComboBox();
         densityLabel = new javax.swing.JLabel();
